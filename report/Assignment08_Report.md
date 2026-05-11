@@ -42,22 +42,23 @@ Identify hash types and document password recovery attempts using **approved lab
 
 ## Security Analysis
 
-- Which hashes were easiest to crack and why?
-- Which were hardest and why?
-- What characteristics make passwords strong/weak?
+- **Easiest to crack:** Hashes that matched common words or patterns in the wordlist (e.g., `Passw0rd`, `Admin@123`, `welcome123`, `root`) were recovered quickly because they are predictable and appear in common password lists.
+- **Hardest to crack:** The uncracked hash likely did not appear in the wordlist and may be longer, less common, or more complex.
+- **Password strength factors:** Length, randomness, and avoidance of common words/patterns significantly increase resistance to wordlist-based recovery.
 
 ## Risk Assessment
 
-- Account takeover risks
-- Data breach impact
-- Credential reuse and lateral movement
+- **Account takeover:** Weak passwords enable rapid compromise, even with basic wordlists.
+- **Breach impact:** Recovered credentials can expose sensitive data and allow privilege escalation.
+- **Credential reuse:** Users often reuse passwords; one cracked hash can lead to access across multiple systems.
 
 ## Recommendations
 
-- Strong password policy guidance
-- Use of salted, slow hashing (bcrypt/Argon2/scrypt)
-- Secure storage practices
+- Enforce **minimum length** (12–16+ characters) and encourage passphrases.
+- Block common passwords and known breached password lists.
+- Store passwords with **salted, slow hashes** (Argon2/bcrypt/scrypt) rather than fast hashes like MD5.
+- Enable **MFA** and monitor for credential stuffing attempts.
 
 ## Conclusion
 
-Summarize outcomes, lessons learned, and key security takeaways.
+Most hashes were recovered using a small wordlist, demonstrating that common passwords are highly vulnerable. Stronger, unique passwords and modern hashing (salted and slow) are necessary to reduce cracking risk and limit the impact of credential compromise.
