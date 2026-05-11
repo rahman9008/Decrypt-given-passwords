@@ -8,7 +8,7 @@ Assignment 08 — Decrypt Given Passwords (Hash Analysis & Password Cracking Doc
 
 ## Objective
 
-Identify hash types and document password recovery attempts using **approved lab-only methods**.
+Identify the hash types for the provided values and document password recovery attempts using **approved lab‑only methods**. The goal is to demonstrate how weak passwords are exposed by common wordlists and to summarize the security implications and mitigation steps.
 
 ## Hash Identification Table
 
@@ -35,14 +35,19 @@ Identify hash types and document password recovery attempts using **approved lab
 ## Methodology
 
 - **Tools used:** hashid (hash identification), hashcat (installed), custom wordlist (`wordlist.txt`).
-- **Hash identification approach:** Used `hashid` to classify each 32‑hex hash and recorded the likely type (MD5).
-- **Recovery approach:** Lab‑approved wordlist attempt using `wordlist.txt`.
+- **Hash identification approach:** Used `hashid` to classify each 32‑hex hash and recorded the likely type (MD5). Evidence captured in `report/figures/hashid_output.png`.
+- **Recovery approach:** Lab‑approved wordlist attempt using `wordlist.txt`. Wordlist contents documented in `report/figures/wordlist.png`. Final outcomes captured in `report/figures/final_results.png`.
 - **Time taken:** Recorded during lab execution.
-- **Evidence:** `report/figures/hashid_output.png`, `report/figures/wordlist.png`, `report/figures/final_results.png`.
+
+## Evidence / Figures
+
+- **Figure 1:** `report/figures/hashid_output.png` — hash identification output.
+- **Figure 2:** `report/figures/wordlist.png` — custom wordlist contents.
+- **Figure 3:** `report/figures/final_results.png` — final recovery results summary.
 
 ## Security Analysis
 
-- **Easiest to crack:** Hashes that matched common words or patterns in the wordlist (e.g., `Passw0rd`, `Admin@123`, `welcome123`, `root`) were recovered quickly because they are predictable and appear in common password lists.
+- **Easiest to crack:** Hashes that matched common words or patterns in the wordlist (e.g., `Passw0rd`, `Admin@123`, `welcome123`, `root`) were recovered quickly because they are predictable and appear in common password lists (Figure 3).
 - **Hardest to crack:** The uncracked hash likely did not appear in the wordlist and may be longer, less common, or more complex.
 - **Password strength factors:** Length, randomness, and avoidance of common words/patterns significantly increase resistance to wordlist-based recovery.
 
